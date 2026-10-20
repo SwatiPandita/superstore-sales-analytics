@@ -39,3 +39,18 @@ SELECT Region, Category, ROUND(SUM(Profit),0) AS profit,
        RANK() OVER (PARTITION BY Region ORDER BY SUM(Profit) DESC) AS rnk
 FROM superstore
 GROUP BY Region, Category;
+
+
+-- 5. What-if: profit if discounts above 20% were capped at 20% (best case, assumes the same quantity sold)
+WITH x AS (
+  SELECT SUM(Profit) AS actual,
+         SUM(CASE WHEN Discount > 0.2
+                  THEN Sales / (1 - Discount) * 0.8 - (Sales - Profit)
+                  ELSE Profit END) AS capped
+  FROM superstore
+)
+SELECT ROUND(actual, 0) AS actual_profit,
+       ROUND(capped, 0) AS profit_if_capped,
+       ROUND(capped - actual, 0) AS gain,
+       ROUND((capped - actual) * 100.0 / actual, 1) AS gain_pct
+FROM x;
