@@ -37,6 +37,8 @@ Sample Superstore (Kaggle): 9,994 order lines with Sales, Quantity, Discount and
 - Order lines with discounts above 20% are about 14% of all lines (1,393 of 9,994) but produce a combined loss of about 135K.
 - Supplies loses money at a low average discount (7.7%), so discounting alone does not explain every loss.
 
+- - What-if estimate: capping discounts at 20% would raise profit from 286,397 to about 505,588 (+219,191, or 76.5%) if customers buy the same quantity. This is a best-case estimate, because some customers may buy less at higher prices.
+
 ## Recommendation
 Cap discounts at 20% unless a manager approves an exception, and review pricing for Tables and Bookcases first. Supplies needs a separate cost and pricing review.
 
