@@ -49,4 +49,4 @@ Cap discounts at 20% unless a manager approves an exception, and review pricing 
 | `dashboard_screenshot.png` | Screenshot of the dashboard |
 
 ## Author
-[Your Name] | [LinkedIn link]
+Swati Pandita | [LinkedIn](https://www.linkedin.com/in/swati-pandita-315b83342)
