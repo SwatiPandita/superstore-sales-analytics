@@ -2,7 +2,7 @@
 
 An end-to-end analytics project: business requirements, SQL analysis and an interactive Power BI dashboard, built to find where a retail store loses money.
 
-![Dashboard](dashboard_screenshot.png)
+![Dashboard](dashboard_screenshot%20%282%29.png)
 
 ## Business problem
 A sales head wants to know which products lose money and whether discounting is hurting profit. Reports were built manually in Excel, which is slow and hard to repeat.
