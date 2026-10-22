@@ -12,18 +12,19 @@ Sample Superstore (Kaggle): 9,994 order lines with Sales, Quantity, Discount and
 
 ## Tools
 - SQL (SQLite, DB Browser for SQLite): CTEs, CASE, aggregations, window functions
-- Power BI Desktop: data cleaning in Power Query, a calculated column (Discount Band), cards, charts and a Region slicer
+- Power BI Desktop: data cleaning in Power Query, calculated columns (Discount Band, Year Month), a profit margin measure, KPI cards, charts, a monthly sales and profit trend, a Region slicer and a key insights panel
 - Requirements documentation: business requirements, user stories, acceptance criteria
 
 ## What I did
 1. Wrote a Business Requirements Document with 15 requirements and 4 user stories (`requirements_doc.pdf`).
 2. Loaded the data into SQLite and checked Sales, Profit and Discount for missing values.
-3. Ran SQL analysis on profit by sub-category and profit by discount band (`queries.sql`).
+3. Ran SQL analysis on profit by sub-category, profit by discount band and a what-if discount cap (`queries.sql`).
 4. Cleaned the data in Power Query (fixed date formats, set number types) and built the Power BI dashboard.
-5. Checked that the dashboard figures match the SQL results.
+5. Added a profit margin KPI, a monthly trend chart, a Region filter and a consistent colour scheme, with red used only for losses.
+6. Checked that the dashboard figures match the SQL results.
 
 ## Key findings
-- Total sales are about 2.30M and total profit is about 286.4K.
+- Total sales are about 2.30M and total profit is about 286.4K (profit margin 12.5%).
 - Three sub-categories lose money: Tables (-17,725), Bookcases (-3,473) and Supplies (-1,189), a combined loss of about 22.4K.
 - Profit falls as discounts rise:
 
@@ -35,9 +36,8 @@ Sample Superstore (Kaggle): 9,994 order lines with Sales, Quantity, Discount and
 | 40%+ | 933 | -99,559 | -77.4% |
 
 - Order lines with discounts above 20% are about 14% of all lines (1,393 of 9,994) but produce a combined loss of about 135K.
+- What-if estimate: capping discounts at 20% would raise profit from 286,397 to about 505,588 (+219,191, or 76.5%) if customers buy the same quantity. This is a best-case estimate, because some customers may buy less at higher prices.
 - Supplies loses money at a low average discount (7.7%), so discounting alone does not explain every loss.
-
-- - What-if estimate: capping discounts at 20% would raise profit from 286,397 to about 505,588 (+219,191, or 76.5%) if customers buy the same quantity. This is a best-case estimate, because some customers may buy less at higher prices.
 
 ## Recommendation
 Cap discounts at 20% unless a manager approves an exception, and review pricing for Tables and Bookcases first. Supplies needs a separate cost and pricing review.
