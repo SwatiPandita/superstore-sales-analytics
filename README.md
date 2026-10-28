@@ -1,5 +1,7 @@
 # Superstore Sales Analytics: Requirements to Dashboard
 
+**Key insight:** discounts above 20% are 14% of order lines but lose about 135K, and capping them could add up to 219K in profit (best case).
+
 An end-to-end analytics project: business requirements, SQL analysis and an interactive Power BI dashboard, built to find where a retail store loses money.
 
 ![Dashboard](dashboard_screenshot%20%282%29.png)
@@ -48,7 +50,7 @@ Cap discounts at 20% unless a manager approves an exception, and review pricing 
 | `requirements_doc.pdf` | Business Requirements Document with user stories |
 | `queries.sql` | SQL queries used in the analysis |
 | `Superstore.pbix` | Power BI dashboard file |
-| `dashboard_screenshot.png` | Screenshot of the dashboard |
+| `dashboard_screenshot (2).png` | Screenshot of the dashboard |
 
 ## Author
 Swati Pandita | [LinkedIn](https://www.linkedin.com/in/swati-pandita-315b83342)
