@@ -4,7 +4,7 @@
 
 An end-to-end analytics project: business requirements, SQL analysis and an interactive Power BI dashboard, built to find where a retail store loses money.
 
-![Dashboard](dashboard_screenshot%20%282%29.png)
+![Dashboard](dashboard_screenshot.png)
 
 ## Business problem
 A sales head wants to know which products lose money and whether discounting is hurting profit. Reports were built manually in Excel, which is slow and hard to repeat.
@@ -55,6 +55,8 @@ Sample Superstore (Kaggle): 9,994 order lines with Sales, Quantity, Discount and
 
 **Limit:** this shows an association. Discounts may go to products or customers that were already weak, and the data cannot show why.
 
+**Limit:** this is the Sample Superstore dataset, not real company data, so the figures show the method, not a real business.
+
 ## What-if range
 
 The 1,393 order lines with discounts above 20% lose 135,376 today. The cap is modelled by selling them at 20% off a list price back-calculated as Sales / (1 - Discount), with cost scaling with volume.
@@ -74,20 +76,20 @@ Margin by exact discount level (margin = profit / sales):
 
 | Discount | Order lines | Margin |
 |---|---|---|
-| 0% | 4,798 | 30.0% |
-| 10% | 94 | 17.0% |
-| 15% | 52 | 5.0% |
-| 20% | 3,657 | 12.0% |
+| 0% | 4,798 | 29.5% |
+| 10% | 94 | 16.6% |
+| 15% | 52 | 5.1% |
+| 20% | 3,657 | 11.8% |
 | 30% | 227 | -10.0% |
-| 32% | 27 | -16.0% |
-| 40% | 206 | -20.0% |
-| 45% | 11 | -46.0% |
-| 50% | 66 | -35.0% |
-| 60% | 138 | -90.0% |
-| 70% | 418 | -99.0% |
+| 32% | 27 | -16.5% |
+| 40% | 206 | -19.8% |
+| 45% | 11 | -45.5% |
+| 50% | 66 | -34.8% |
+| 60% | 138 | -89.5% |
+| 70% | 418 | -98.7% |
 | 80% | 300 | -180.0% |
 
-20% is the highest discount level where order lines still earn a margin (12.0% across 3,657 lines, 37% of all lines). Every level from 30% up loses money. The data has no discount levels between 20% and 30%, so 20% is the highest level observed to be profitable, not a precisely estimated break-even.
+20% is the highest discount level where order lines still earn a margin (11.8% across 3,657 lines, 37% of all lines). Every level from 30% up loses money. The data has no discount levels between 20% and 30%, so 20% is the highest level observed to be profitable, not a precisely estimated break-even.
 
 ## Where the deep-discount loss sits
 
@@ -122,7 +124,7 @@ The what-if range is an estimate. To measure the real effect, pilot the cap in o
 | `requirements_doc.pdf` | Business Requirements Document with user stories |
 | `queries.sql` | SQL queries used in the analysis |
 | `Superstore.pbix` | Power BI dashboard file |
-| `dashboard_screenshot (2).png` | Screenshot of the dashboard |
+| `dashboard_screenshot.png` | Screenshot of the dashboard |
 
 ## Author
 Swati Pandita | [LinkedIn](https://www.linkedin.com/in/swati-pandita-315b83342)
